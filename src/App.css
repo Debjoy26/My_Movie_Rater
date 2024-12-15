@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.App {
+  
+  background-color: #282c34;
+  min-height: 100vh;
+  color: white;
+  padding: 20px;
+}
+
+
+.App-header {
+  text-align: center;
+  font-size: calc(10px + 2vmin);
+  
+}
+
+input,textarea {
+  padding: 0.4rem;
+  margin: 3px;
+  border: 1px solid #ccc; /* Example: Adds a light gray border */
+  border-radius: 4px;      /* Optional: Rounds the corners */
+  outline: none;           /* Removes the default focus outline */
+}
+
+button {
+  background: linear-gradient(90deg, #a8edea, #fed6e3); /* Soft teal to pastel pink */
+  color: #333; /* Slightly dark text for contrast */
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 2px 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  position: relative; /* Necessary for pseudo-element animation */
+  overflow: hidden; /* Ensures animations don't leak out */
+  z-index: 1;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.4s;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+  z-index: 0;
+  transition: left 0.5s ease;
+}
+
+button:hover::before {
+  left: 0;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15), 0 0 15px rgba(168, 237, 234, 0.8); /* Glow effect */
+}
+
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(168, 237, 234, 0.8);
+}
+
+
+
+/* Label Styling */
+label {
+  font-size: 1rem; /* Clear font size */
+  color: #ffffff; /* White text for better contrast */
+  margin-bottom: 0.5rem; /* Space below label */
+  display: block;
+}
+
+/* Input Styling */
+input {
+  background: #f3f4f6; /* Light grey background */
+  color: #333; /* Dark text for readability */
+  font-size: 1rem; /* Consistent font size */
+  padding: 0.8rem 1.2rem;
+  margin: 8px 0 12px; /* Margin around the input field */
+  border: 2px solid #ddd; /* Light border for a soft look */
+  border-radius: 8px; /* Rounded corners */
+  width: 100%; /* Full width of its container */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Textarea Styling */
+textarea {
+  background: #f3f4f6; /* Light grey background */
+  color: #333; /* Dark text for readability */
+  font-size: 1rem; /* Consistent font size */
+  padding: 0.8rem 1.2rem;
+  margin: 8px 0 12px; /* Margin below textarea */
+  border: 2px solid #ddd; /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  width: 100%; /* Full width */
+  resize: vertical; /* Allow resizing vertically */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Input Focus Effect */
+input:focus {
+  outline: none;
+  border-color: #a8edea; /* Soft teal border on focus */
+  box-shadow: 0 0 8px rgba(168, 237, 234, 0.8); /* Soft teal glow */
+}
+
+/* Textarea Focus Effect */
+textarea:focus {
+  outline: none;
+  border-color: #a8edea; /* Soft teal border on focus */
+  box-shadow: 0 0 8px rgba(168, 237, 234, 0.8); /* Soft teal glow */
+}
+
+/* Input and Textarea Hover Effect */
+input:hover, textarea:hover {
+  border-color: #fed6e3; /* Soft pink border on hover */
+}
+
+/* Placeholder Styling */
+input::placeholder, textarea::placeholder {
+  color: #888; /* Light grey placeholder text */
+  font-style: italic; /* Italicize placeholder text */
+}
+
+button:disabled {
+  background: #d1d5db; /* Light gray background to indicate the button is inactive */
+  color: #9ca3af; /* Gray text to match the disabled look */
+  cursor: not-allowed; /* Change cursor to indicate the button can't be clicked */
+  border: 2px solid #e5e7eb; /* Light border to match the background */
+  box-shadow: none; /* Remove any box-shadow to make the button look flat */
+  pointer-events: none; /* Prevent click events from being triggered */
+  opacity: 0.6; /* Slightly reduced opacity for a more disabled look */
+  transition: background 0.3s ease, color 0.3s ease, opacity 0.3s ease; /* Smooth transitions for state change */
+}
+
+
+
